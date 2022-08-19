@@ -24,3 +24,8 @@ with open(my_file, 'r') as f:
     source = f.read()
 
 does_it_need_toplevel_await = TopLeveLAwaitFinder().is_source_async(source)
+```
+
+### Testing
+
+With pytest in your environment, run `pytest`.
