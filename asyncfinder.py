@@ -1,5 +1,5 @@
 import ast
-class asyncVisitor(ast.NodeVisitor):
+class topLevelAsyncFinder(ast.NodeVisitor):
     def is_source_async(self, source):
         self.async_found = False
         node = ast.parse(source)
