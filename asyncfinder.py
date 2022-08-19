@@ -1,5 +1,5 @@
 import ast
-class topLevelAsyncFinder(ast.NodeVisitor):
+class TopLevelAsyncFinder(ast.NodeVisitor):
     def is_source_async(self, source):
         self.async_found = False
         node = ast.parse(source)
@@ -27,4 +27,4 @@ if __name__ == "__main__":
     with open(file, 'r') as f:
         source = f.read()
     
-    print(f"File {file} {'uses' if topLevelAsyncFinder().is_source_async(source) else 'does not use'} top level await")
+    print(f"File {file} {'uses' if TopLevelAsyncFinder().is_source_async(source) else 'does not use'} top level await")

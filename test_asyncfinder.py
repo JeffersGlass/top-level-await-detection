@@ -1,4 +1,4 @@
-from asyncfinder import topLevelAsyncFinder
+from asyncfinder import TopLevelAsyncFinder
 import pytest
 
 EXPECTED_RESULTS = [
@@ -20,7 +20,7 @@ def load_and_test(filename) -> bool:
     with open(filename, 'r') as infile:
         source = infile.read()
 
-    return topLevelAsyncFinder().is_source_async(source)
+    return TopLevelAsyncFinder().is_source_async(source)
 
 @pytest.mark.parametrize("file, result", EXPECTED_RESULTS)
 def test_file_for_async(file, result):
