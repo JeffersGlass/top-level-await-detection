@@ -1,9 +1,11 @@
-from asyncfinder import is_async_visit
+from asyncfinder import asyncVisitor
 import pytest
 
 EXPECTED_RESULTS = [
     ("async_finder_tests/helloworld.py", False),
+
     ("async_finder_tests/await_in_asyncdef.py", False),
+    ("async_finder_tests/asyncwith_in_asyncdef.py", False),
     ("async_finder_tests/asyncfor_in_asyncdef.py", False),
 
     ("async_finder_tests/naked_await.py", True),
@@ -18,7 +20,7 @@ def load_and_test(filename) -> bool:
     with open(filename, 'r') as infile:
         source = infile.read()
 
-    return is_async_visit(source)
+    return asyncVisitor().is_source_async(source)
 
 @pytest.mark.parametrize("file, result", EXPECTED_RESULTS)
 def test_file_for_async(file, result):
