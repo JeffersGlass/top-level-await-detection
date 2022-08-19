@@ -1,5 +1,7 @@
 Code (and tests) to determine whether a given Python script requires ast.PyCF_ALLOW_TOP_LEVEL_AWAIT to compile, i.e. whether it uses "Top Level Await."
 
+This code was originally written to test an improvement to [PyScript](https://github.com/pyscript/pyscript). See the [notes on its motivation and testing](pyscript-examples-timing). 
+
 ## Usage
 
 ### Command Line
